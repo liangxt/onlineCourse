@@ -49,17 +49,6 @@
                     <div class="content_wrap clearfix">
                         <div class="menu_user_area menu_user_right menu_user_nav_area">
                             <ul id="menu_user" class="menu_user_nav">
-                                <!--<li class="menu_user_controls">-->
-                                    <!--<a href="#">-->
-										<!--<span class="user_avatar">-->
-											<!--<img alt="" src="http://1.gravatar.com/avatar/45e4d63993e55fa97a27d49164bce80f?s=16&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/45e4d63993e55fa97a27d49164bce80f?s=32&amp;d=mm&amp;r=g 2x" class="avatar avatar-16 photo" height="16" width="16" />-->
-										<!--</span>-->
-										<!--<span class="user_name">John Doe</span></a>-->
-                                    <!--<ul>-->
-                                        <!--<li><a href="#" class="icon icon-doc-inv">New post</a></li>-->
-                                        <!--<li><a href="#" class="icon icon-cog-1">设置</a></li>-->
-                                    <!--</ul>-->
-                                <!--</li>-->
                                 <li class="menu_user_logout">
 									<a href="{% url 'login' %}" class="icon icon-logout">登录</a>
 								</li>
@@ -74,7 +63,7 @@
                     <div class="content_wrap clearfix">
 						<!-- Logo -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{% url 'home' %}">
 								<img src="http://placehold.it/259x30" class="logo_main" alt="">
 								<img src="http://placehold.it/259x30" class="logo_fixed" alt="">
 							</a>
@@ -138,7 +127,7 @@
                         <ul>
                             <!-- Slide 1 -->
                             <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                                <img src="images/green.jpg" alt="green" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
+                                <img src="{% static 'digiTech/images/green.jpg' %}" alt="green" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
                                 <div class="tp-caption customin stl cust-z-index-5 rs-cust-style8" data-x="20" data-y="230" data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:20;transformOrigin:50% 100%;" data-speed="1300" data-start="500" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-end="8250" data-endspeed="300">
 									<img src="http://placehold.it/501x288" alt="">
                                 </div>
@@ -153,7 +142,7 @@
                             </li>
                             <!-- Slide 2 -->
                             <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                                <img src="images/blue.jpg" alt="blue" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
+                                <img src="{% static 'digiTech/images/blue.jpg' %}" alt="blue" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
                                 <div class="tp-caption customin stl cust-z-index-5 rs-cust-style8" data-x="40" data-y="200" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:360;scaleX:0.1;scaleY:0.1;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;" data-speed="1300" data-start="500" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-end="8250" data-endspeed="300">
 									<img src="http://placehold.it/473x402" alt="">
                                 </div>
@@ -169,7 +158,7 @@
                             </li>
                             <!-- Slide 3 -->
                             <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                                <img src="images/yellow.jpg" alt="yellow" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
+                                <img src="{% static 'digiTech/images/yellow.jpg' %}" alt="yellow" data-bgposition="center top" data-bgfit="normal" data-bgrepeat="repeat">
                                 <div class="tp-caption roundedimage sfl stl cust-z-index-5 rs-cust-style8" data-x="50" data-y="200" data-speed="1300" data-start="500" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-end="8250" data-endspeed="300">
 									<img src="http://placehold.it/440x305" alt="">
                                 </div>
@@ -961,7 +950,7 @@
             <footer class="contacts_wrap bg_tint_dark contacts_style_dark">
                 <div class="content_wrap">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="{% url 'home' %}">
 							<img src="http://placehold.it/259x30" alt="">
 						</a>
                     </div>

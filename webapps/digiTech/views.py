@@ -8,3 +8,7 @@ def home(request):
 def handler_404(request):
     return render(request, 'digiTech/404.html')
 
+
+def registration(request):
+    return render(request, 'digiTech/registration.html')
+

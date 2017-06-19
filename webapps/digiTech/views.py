@@ -12,3 +12,11 @@ def handler_404(request):
 def registration(request):
     return render(request, 'digiTech/registration.html')
 
+
+def login(request):
+    return render(request, 'digiTech/login.html')
+
+
+def password_reset(request):
+    return render(request, 'digiTech/password_reset.html')
+

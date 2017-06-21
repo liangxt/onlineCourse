@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^notfound$', views.handler_404, name='404'),
     url(r'^login$', views.login, name='login'),
     url(r'^password_reset$', views.password_reset, name='password_reset'),
+    url(r'^chechout$', views.checkout, name='checkout'),
 ]

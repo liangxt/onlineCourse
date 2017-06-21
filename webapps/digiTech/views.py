@@ -20,3 +20,6 @@ def login(request):
 def password_reset(request):
     return render(request, 'digiTech/password_reset.html')
 
+def checkout(request):
+    return render(request, 'digiTech/checkout.html')
+

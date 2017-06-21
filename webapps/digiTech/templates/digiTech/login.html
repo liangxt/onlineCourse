@@ -35,17 +35,21 @@
   <body>
 
     <div class="container">
-
-      <form class="form-signin">
+      <form class="form-signin" action="{% url 'login' %}" method="post">
         <h2 class="form-signin-heading">KY Coding</h2>
-        <label for="inputEmail" class="sr-only">用户名</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <label for="{{ form.username.auto_id }}" class="sr-only"></label>
+          {{ form.username }}
+        <label for="{{ form.password.auto_id }}" class="sr-only"></label>
+          {{ form.password }}
         <button class="btn btn-lg btn-success btn-block" type="submit">登录</button> <br>
-          <a href="{% url 'password_reset' %}">忘记密码？</a>
+          <a href="{% url 'password_forget' %}">忘记密码？</a>
+          {% if has_error %}
+           <div class="alert alert-warning" role="alert">
+            <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></strong> {{ information }}
+            </div>
+          {% endif %}
+          {% csrf_token %}
       </form>
-
     </div> <!-- /container -->
 
 

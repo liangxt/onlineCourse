@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'digiTech/images/favicon.ico' %}" />
-    <title>注册 | Youth DigiTech</title>
+    <title>注册 | KY Coding</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
@@ -122,7 +122,7 @@
             <div class="page_top_wrap page_top_title page_top_breadcrumbs sc_pt_st1">
 				<div class="content_wrap">
                     <div class="breadcrumbs">
-                        <a class="breadcrumbs_item home" href="#">已有账号？请登录</a>
+                        <a class="breadcrumbs_item home" href="{% url 'login' %}">已有账号？请登录</a>
 					</div>
                     <h1 class="page_title">欢迎注册</h1>
                 </div>
@@ -135,55 +135,63 @@
                         <article class="post_item post_item_single page">
                             <section class="post_content">
 								<div class="woocommerce">
-									<form name="checkout" method="post" class="checkout woocommerce-checkout" action="#" enctype="multipart/form-data">
+                                    <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{% url 'registration' %}">
 										<div class="col1-set" id="customer_details">
 											<div class="col-1">
 												<div class="woocommerce-billing-fields">
-{#													<h3>注册</h3>#}
-													<p class="form-row form-row-first" id="billing_first_name_field">
-														<label for="billing_first_name" class="">用户名 <abbr class="required" title="required">*</abbr></label>
-														<input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="" value="" />
+													<p class="form-row form-row-first">
+                                                        <label class="" for="{{ form.username.auto_id }}">{{ form.username.label }} <abbr class="required" title="required">*</abbr></label>
+														{{ form.username }}
 													</p>
-													<p class="form-row form-row-last" id="billing_last_name_field">
-														<label for="billing_last_name" class="">邮箱账号 <abbr class="required" title="required">*</abbr></label>
-														<input type="text" class="input-text" name="billing_last_name" id="billing_last_name" placeholder="" value="" />
+													<p class="form-row form-row-last">
+                                                        <label class="" for="{{ form.email.auto_id }}">{{ form.email.label }}<abbr class="required" title="required">*</abbr></label>
+                                                        {{ form.email }}
 													</p>
-                                                    <p class="form-row form-row-first" id="billing_first_name_field">
-														<label for="billing_first_name" class="">设置密码 <abbr class="required" title="required">*</abbr></label>
-														<input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="6-20个字符，建议使用字母、数字和符号两种及以上的组合" value="" />
+                                                    <p class="form-row form-row-first">
+                                                        <label class="" for="{{ form.password1.auto_id }}">{{ form.password1.label }}<abbr class="required" title="required">*</abbr></label>
+														{{ form.password1 }}
 													</p>
-													<p class="form-row form-row-last" id="billing_last_name_field">
-														<label for="billing_last_name" class="">确认密码 <abbr class="required" title="required">*</abbr></label>
-														<input type="text" class="input-text" name="billing_last_name" id="billing_last_name" placeholder=" 请再次输入密码" value="" />
+													<p class="form-row form-row-last">
+                                                        <label class="" for="{{ form.password2.auto_id }}">{{ form.password2.label }}<abbr class="required" title="required">*</abbr></label>
+														{{ form.password2 }}
 													</p>
-													<div class="clear"></div>
-													<p class="form-row form-row-wide address-field" id="billing_country_field">
-														<label for="billing_country" class="">所在地</label>
-														<select name="billing_country" id="billing_country" class="country_to_state country_select">
-															<option value="">请选择您的所在地&hellip;</option>
-															<option value="AX">&#197;land Islands</option>
-															<option value="AF">Afghanistan</option>
-															<option value="AL">Albania</option>
-														</select>
+													<p class="form-row form-row-first address-field">
+                                                        <label class="" for="{{ form.location.auto_id }}">{{ form.location.label }}</label>
+														{{ form.location }}
 													</p>
-                                                    <div class="clear"></div>
-                                                    <p class="form-row form-row-wide" id="billing_company_field">
-														<label for="billing_company" class="">学校</label>
-														<input type="text" class="input-text " name="billing_company" id="billing_company" placeholder="" value="" />
+                                                    <p class="form-row form-row-last">
+                                                        <label class="" for="{{ form.school.auto_id }}">{{ form.school.label }}</label>
+														{{ form.school }}
 													</p>
 													<div class="clear"></div>
 													<p class="form-row form-row-wide create-account">
-														<input id="createaccount" type="checkbox" name="createaccount" value="1"/>
-														<label for="createaccount" class="checkbox">
-                                                            阅读并同意 <a href="#" title="registration_agreement" data-toggle="modal" data-target="#myModal">《Youth DigiTech用户注册协议》《隐私政策》</a>
+                                                         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+														<label for="{{ form.agreement.auto_id }}" class="checkbox">
+                                                            点击注册表示您已阅读并同意 <a href="#" title="registration_agreement" data-toggle="modal" data-target="#myModal">《KY Coding用户注册协议》《隐私政策》</a>
                                                         </label>
 													</p>
 												</div>
 											</div>
 											<div class="form-row place-order">
-													<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value=" 立即注册" data-value="Place order" />
-												</div>
+													<input type="submit" class="button alt" name="woocommerce_checkout_place_order" value=" 立即注册"/>
+                                            </div>
 										</div>
+                                         <div class="sc_section" data-animation="animated fadeInUp normal">
+                                         {% if has_error %}
+                                        <div class="sc_infobox sc_infobox_style_info sc_infobox_closeable sc_infobox_iconed icon-info-2">
+                                             {% for field in form %}
+                                        {% if field.errors %}
+									     <b>{{ field.errors }}</b>
+                                             {% endif %}
+                                         {% endfor %}
+                                        </div>
+                                         {% endif %}
+                                         {% if information %}
+                                             <div class="sc_infobox sc_infobox_style_success sc_infobox_closeable sc_infobox_iconed icon-check-2"><b>{{ information }}</b></div>
+                                         {% endif %}
+
+                                         </div>
+                                        {% csrf_token %}
 									</form>
 								</div>
                             </section>

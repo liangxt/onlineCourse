@@ -166,3 +166,6 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/digiTech/')
 
+def checkout(request):
+    return render(request, 'digiTech/checkout.html')
+

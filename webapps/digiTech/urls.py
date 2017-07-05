@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^password_forget', views.password_forget, name='password_forget'),
     url(r'^account_activate/(?P<username>.+)/(?P<token>.+)$', views.account_activate, name='account_activate'),
     url(r'^logout$', views.user_logout, name='logout'),
-    url(r'^chechout$', views.checkout, name='checkout'),
+    url(r'^checkout$', views.checkout, name='checkout'),
 ]

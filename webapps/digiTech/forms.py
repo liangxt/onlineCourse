@@ -60,3 +60,25 @@ class PasswordResetForm(forms.Form):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError('两次密码输入不一致')
         return password2
+
+
+class ProfileEditForm(forms.Form):
+    password1 = forms.CharField(min_length=6, max_length=20, label='修改密码', widget=forms.PasswordInput(attrs={
+        'placeholder': '6-20个字符，建议使用字母、数字和符号两种及以上的组合', 'class': 'input-text'}), required=False)
+    password2 = forms.CharField(min_length=6, max_length=20, label='确认密码', widget=forms.PasswordInput(attrs={
+        'placeholder': '请再次输入密码', 'class': 'input-text'}), required=False)
+    location = forms.CharField(max_length=2, label='所在地', widget=forms.Select(choices=(('', '请选择您的所在地...'),)
+                               + PLACE_CHOICES, attrs={'class': 'country_to_state country_select'}), required=False)
+    school = forms.CharField(max_length=50, label='学校', widget=forms.TextInput(attrs={'class': 'input-text'}),
+                             required=False)
+
+    def clean_password2(self):
+        cleaned_data = super(ProfileEditForm, self).clean()
+        password1 = cleaned_data.get('password1')
+        password2 = cleaned_data.get('password2')
+        if password1 or password2:
+            raise forms.ValidationError('两次密码输入不一致')
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError('两次密码输入不一致')
+        return password2
+

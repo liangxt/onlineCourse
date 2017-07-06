@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Login url
+LOGIN_URL = '/digiTech/login'
+LOGIN_REDIRECT_URL = '/digiTech/'
+
 
 # Application definition
 

@@ -9,6 +9,32 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 
 
+def single_module(request):
+    return render(request, 'digiTech/single_module.html')
+
+
+def course_module(request):
+    return render(request, 'digiTech/course_module.html')
+
+
+def course(request):
+    context = {}
+    context['user'] = request.user
+    return render(request, 'digiTech/course.html', context)
+
+
+def team(request):
+    context = {}
+    context['user'] = request.user
+    return render(request, 'digiTech/team.html', context)
+
+
+def all_course(request):
+    context = {}
+    context['user'] = request.user
+    return render(request, 'digiTech/all_courses.html', context)
+
+
 def home(request):
     context = {}
     context['user'] = request.user
@@ -16,7 +42,9 @@ def home(request):
 
 
 def handler_404(request):
-    return render(request, 'digiTech/404.html')
+    context = {}
+    context['user'] = request.user
+    return render(request, 'digiTech/404.html', context)
 
 
 @transaction.atomic()
@@ -158,13 +186,34 @@ def account_activate(request, username, token):
 
 @login_required()
 def profile_edit(request):
-    return render(request, 'digiTech/profile_edit.html')
+    people = Person.objects.get(user=request.user)
+    context = {}
+    context['username'] = people.user.username
+    if request.method == 'GET':
+        context['form'] = ProfileEditForm(initial={'location': people.location, 'school': people.school})
+        return render(request, 'digiTech/profile_edit.html', context)
+    profile_edit_form = ProfileEditForm(request.POST)
+    context['form'] = profile_edit_form
+    if not profile_edit_form.is_valid():
+        context['has_error'] = True
+        return render(request, 'digiTech/profile_edit.html', context)
+    if profile_edit_form.cleaned_data['password2']:
+        people.user.set_password(profile_edit_form.cleaned_data['password2'])
+        people.user.save()
+    people.school = profile_edit_form.cleaned_data['school']
+    people.location = profile_edit_form.cleaned_data['location']
+    people.save()
+    context['information'] = '账户信息修改成功'
+    context['has_error'] = False
+    login(request, people.user)
+    return render(request, 'digiTech/profile_edit.html', context)
 
 
 @login_required()
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/digiTech/')
+
 
 def checkout(request):
     return render(request, 'digiTech/checkout.html')

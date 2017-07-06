@@ -5,6 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {% load static %}
     <title>首页 | Youth DigiTech</title>
+
  	<link rel="icon" type="image/x-icon" href="{% static 'digiTech/images/favicon.ico' %}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,700,700italic&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext" type="text/css" media="all" />
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce-layout.css' %}" type="text/css" media="all" />
     <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce-smallscreen.css' %}" type="text/css" media="only screen and (max-width: 768px)" />
     <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce.css' %}" type="text/css" media="all" />
+     <link rel="stylesheet" href="{% static 'digiTech/css/woo-style.css' %}" type="text/css" media="all"/>
 
     <link rel="stylesheet" href="{% static 'digiTech/css/style.css' %}" type="text/css" media="all" />
     <link rel="stylesheet" href="{% static 'digiTech/css/shortcodes.css' %}" type="text/css" media="all" />
@@ -34,6 +36,7 @@
     <link rel="stylesheet" href="{% static 'digiTech/css/skins/skin-responsive.css' %}" type="text/css" media="all" />
     <link rel="stylesheet" href="{% static 'digiTech/css/slider-style.css' %}" type="text/css" media="all" />
 	<link rel="stylesheet" href="{% static 'digiTech/css/custom-style.css' %}" type="text/css" media="all" />
+
 </head>
 
 
@@ -49,6 +52,48 @@
                     <div class="content_wrap clearfix">
                         <div class="menu_user_area menu_user_right menu_user_nav_area">
                             <ul id="menu_user" class="menu_user_nav">
+                            <li class="menu_user_cart">
+                                    <a href="#" class="cart_button"> 购物车</a>
+									<ul class="widget_area sidebar_cart sidebar fadeOutDown animated fast">
+										<li class="">
+											<div class="widget woocommerce widget_shopping_cart">
+												<div class="hide_cart_widget_if_empty">
+													<div class="widget_shopping_cart_content">
+														<ul class="cart_list product_list_widget ">
+															<li class="mini_cart_item">
+																<a title="Remove this item" class="remove" href="#">×</a>
+																<a href="course.html">
+																	<img alt="" src="http://placehold.it/50x50">Introduction to Biomedical Imaging&nbsp;
+																</a>
+																<span class="quantity">1 × <span class="amount">£350.00</span></span>
+															</li>
+															<li class="mini_cart_item">
+																<a title="Remove this item" class="remove" href="#">×</a>
+																<a href="course.html">
+																	<img alt="" src="http://placehold.it/50x50">Introduction to Computer Science&nbsp;
+																</a>
+																<span class="quantity">1 × <span class="amount">£120.00</span></span>
+															</li>
+															<li class="mini_cart_item">
+																<a title="Remove this item" class="remove" href="#">×</a>
+																<a href="course.html">
+																	<img alt="" src="http://placehold.it/50x50">Star Print Backpack&nbsp;
+																</a>
+																<span class="quantity">1 × <span class="amount">£41.39</span></span>
+															</li>
+														</ul>
+														<p class="total"><strong>Subtotal:</strong> <span class="amount">£511.39</span></p>
+														<p class="buttons">
+															<a class="button wc-forward" href="cart.html">View Cart</a>
+															<a class="button checkout wc-forward" href="checkout.html">Checkout</a>
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+                                </li>
+
                                 {% if user.is_authenticated %}
                                 <li class="menu_user_controls">
                                     <a href="#">
@@ -57,8 +102,7 @@
 										</span>
 										<span class="user_name">{{ user.username }}</span></a>
                                     <ul>
-                                        <li><a href="#" class="icon icon-doc-inv">我的课程</a></li>
-                                        <li><a href="#" class="icon icon-cog-1">用户设置</a></li>
+                                        <li><a href="{% url 'profile_edit' %}" class="icon icon-cog-1">账户设置</a></li>
                                     </ul>
                                 </li>
 
@@ -111,7 +155,7 @@
 								<li class="menu-item menu-item-has-children current-menu-ancestor current-menu-parent">
 									<a href="{% url 'home' %}">主页</a>
 								</li>
-								<li class="menu-item menu-item-has-children"><a href="courses-streampage.html">课程</a>
+								<li class="menu-item menu-item-has-children"><a href="{% url 'all_courses' %}">课程</a>
 									<ul class="sub-menu">
 										<li class="menu-item"><a href="courses-streampage.html">All courses</a></li>
 										<li class="menu-item"><a href="free-course.html">Free course</a></li>
@@ -125,13 +169,13 @@
 										</li>
 									</ul>
 								</li>
-								<li class="menu-item menu-item-has-children"><a href="team-members.html">联系我们</a>
+								<li class="menu-item menu-item-has-children"><a href="{% url 'team' %}">联系我们</a>
 									<ul class="sub-menu">
-										<li class="menu-item"><a href="team-members.html">团队故事</a></li>
+										<li class="menu-item"><a href="{% url 'team' %}">团队故事</a></li>
 										<li class="menu-item"><a href="personal-page.html">博客</a></li>
 									</ul>
 								</li>
-								<li class="menu-item"><a href="products.html">活动信息</a></li>
+								<li class="menu-item"><a href="all_courses.html">活动信息</a></li>
 							</ul>
 						</nav>
 						<!-- /Navigation -->
@@ -280,7 +324,7 @@
 																					<a href="paid-course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">LEARN MORE</a>
 																				</div>
 																				<div class="post_button">
-																					<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
+																					<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
 																				</div>
 																			</div>
 																		</div>
@@ -324,7 +368,7 @@
 																					<a href="paid-course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">LEARN MORE</a>
 																				</div>
 																				<div class="post_button">
-																					<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
+																					<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
 																				</div>
 																			</div>
 																		</div>
@@ -409,7 +453,7 @@
 																					<a href="paid-course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">LEARN MORE</a>
 																				</div>
 																				<div class="post_button">
-																					<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
+																					<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
 																				</div>
 																			</div>
 																		</div>
@@ -450,7 +494,7 @@
 																					<a href="paid-course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">LEARN MORE</a>
 																				</div>
 																				<div class="post_button">
-																					<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
+																					<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
 																				</div>
 																			</div>
 																		</div>
@@ -493,7 +537,7 @@
 																					<a href="paid-course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">LEARN MORE</a>
 																				</div>
 																				<div class="post_button">
-																					<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
+																					<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">BUY NOW</a>
 																				</div>
 																			</div>
 																		</div>
@@ -591,7 +635,7 @@
 															<span class="sc_highlight font_2_57em lh_1em"><b>Free!</b> 30 Days</span>
 														</div>
 														<div class="sc_price_block_link">
-															<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
+															<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
 														</div>
 													</div>
 												</div>
@@ -606,7 +650,7 @@
 																<br /> plan by paying yearly.</p>
 														</div>
 														<div class="sc_price_block_link">
-															<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
+															<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
 														</div>
 													</div>
 												</div>
@@ -624,7 +668,7 @@
 																<br /> plan by paying biannually.</p>
 														</div>
 														<div class="sc_price_block_link">
-															<a href="product-page.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
+															<a href="course.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">I WANT THIS PLAN</a>
 														</div>
 													</div>
 												</div>

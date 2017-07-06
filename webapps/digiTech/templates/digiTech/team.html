@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'digiTech/images/favicon.ico' %}" />
-    <title>我的账户 | KY Coding</title>
+    <title>团队故事 | KY Coding</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
@@ -53,65 +53,6 @@
 				<!-- User menu -->
                 <div class="menu_user_wrap">
                     <div class="content_wrap clearfix">
-                        <div class="menu_user_area menu_user_right menu_user_nav_area">
-                            <ul id="menu_user" class="menu_user_nav">
-                            <li class="menu_user_cart">
-                                    <a href="#" class="cart_button"> 购物车</a>
-									<ul class="widget_area sidebar_cart sidebar fadeOutDown animated fast">
-										<li class="">
-											<div class="widget woocommerce widget_shopping_cart">
-												<div class="hide_cart_widget_if_empty">
-													<div class="widget_shopping_cart_content">
-														<ul class="cart_list product_list_widget ">
-															<li class="mini_cart_item">
-																<a title="Remove this item" class="remove" href="#">×</a>
-																<a href="course.html">
-																	<img alt="" src="http://placehold.it/50x50">Introduction to Biomedical Imaging&nbsp;
-																</a>
-																<span class="quantity">1 × <span class="amount">£350.00</span></span>
-															</li>
-															<li class="mini_cart_item">
-																<a title="Remove this item" class="remove" href="#">×</a>
-																<a href="course.html">
-																	<img alt="" src="http://placehold.it/50x50">Introduction to Computer Science&nbsp;
-																</a>
-																<span class="quantity">1 × <span class="amount">£120.00</span></span>
-															</li>
-															<li class="mini_cart_item">
-																<a title="Remove this item" class="remove" href="#">×</a>
-																<a href="course.html">
-																	<img alt="" src="http://placehold.it/50x50">Star Print Backpack&nbsp;
-																</a>
-																<span class="quantity">1 × <span class="amount">£41.39</span></span>
-															</li>
-														</ul>
-														<p class="total"><strong>Subtotal:</strong> <span class="amount">£511.39</span></p>
-														<p class="buttons">
-															<a class="button wc-forward" href="cart.html">View Cart</a>
-															<a class="button checkout wc-forward" href="checkout.html">Checkout</a>
-														</p>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-                                </li>
-                                <li class="menu_user_controls">
-                                    <a href="#">
-										<span class="user_avatar">
-											<img alt="" src="http://1.gravatar.com/avatar/45e4d63993e55fa97a27d49164bce80f?s=16&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/45e4d63993e55fa97a27d49164bce80f?s=32&amp;d=mm&amp;r=g 2x" class="avatar avatar-16 photo" height="16" width="16" />
-										</span>
-										<span class="user_name">{{ username }}</span></a>
-                                    <ul>
-                                        <li><a href="{% url 'profile_edit' %}" class="icon icon-cog-1">账户设置</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu_user_logout">
-									<a href="{% url 'logout' %}" class="icon icon-logout">注销</a>
-								</li>
-                            </ul>
-                        </div>
                         <div class="menu_user_area menu_user_left menu_user_contact_area">Contact us on 0 800 123-4567 or <a href="#">support@themerex.net</a></div>
                     </div>
                 </div>
@@ -149,7 +90,7 @@
 							<ul id="menu_main" class="menu_main_nav">
 								<li class="menu-item menu-item-has-children"><a href="{% url 'home' %}">主页</a>
 								</li>
-								<li class="menu-item menu-item-has-children"><a href="{% url 'all_courses' %}">课程</a>
+								<li class="menu-item menu-item-has-children"><a href="courses-streampage.html">课程</a>
 									<ul class="sub-menu">
 										<li class="menu-item"><a href="courses-streampage.html">All courses</a></li>
 										<li class="menu-item"><a href="free-course.html">Free course</a></li>
@@ -180,7 +121,7 @@
 			<!-- Page title -->
             <div class="page_top_wrap page_top_title page_top_breadcrumbs sc_pt_st1">
 				<div class="content_wrap">
-                    <h1 class="page_title">我的账户</h1>
+                    <h1 class="page_title">团队故事</h1>
                 </div>
             </div>
 			<!-- /Page title -->
@@ -190,134 +131,183 @@
                     <div class="content">
                         <article class="post_item post_item_single page">
                             <section class="post_content">
-                            <h4>账户信息修改</h4>
-								<div class="woocommerce">
-                                    <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{% url 'profile_edit' %}">
-										<div class="col1-set" id="customer_details">
-											<div class="col-1">
-												<div class="woocommerce-billing-fields">
-                                                    <p class="form-row form-row-first">
-                                                        <label class="" for="{{ form.password1.auto_id }}">{{ form.password1.label }}</label>
-														{{ form.password1 }}
-													</p>
-													<p class="form-row form-row-last">
-                                                        <label class="" for="{{ form.password2.auto_id }}">{{ form.password2.label }}</label>
-														{{ form.password2 }}
-													</p>
-													<p class="form-row form-row-first address-field">
-                                                        <label class="" for="{{ form.location.auto_id }}">{{ form.location.label }}</label>
-														{{ form.location }}
-													</p>
-                                                    <p class="form-row form-row-last">
-                                                        <label class="" for="{{ form.school.auto_id }}">{{ form.school.label }}</label>
-														{{ form.school }}
-													</p>
-													<div class="clear"></div>
+
+                                <!-- Image alignment section -->
+                                <div class="sc_section">
+									<figure class="sc_image alignleft sc_image_shape_square width_280 height_158">
+										<img src="http://placehold.it/280x158" alt="" />
+										<figcaption>
+											<span class="icon-users-2"></span> Aligned left
+										</figcaption>
+									</figure>
+									<p>Proin dignissim commodo magna at luctus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus.
+									<br /> Proin dignissim commodo magna at luctus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus.
+									</p>
+									<figure class="sc_image alignright sc_image_shape_square width_280 height_158">
+										<img src="http://placehold.it/280x158" alt="" />
+										<figcaption>
+											<span class="icon-users-2"></span> Aligned right
+										</figcaption>
+									</figure>
+									<p>Mauris vitae quam ligula. In tincidunt sapien sed nibh scelerisque congue. Maecenas ut libero eu metus tincidunt lobortis. Duis accumsan at mauris vel lacinia. Cras cursus eros vel commodo tincidunt. Donec ac urna eget velit bibendum aliquam. Phasellus tempor urna erat, a fringilla elit vulputate in. Vivamus euismod mauris id sodales tincidunt.Mauris vitae quam ligula. In tincidunt sapien sed nibh scelerisque congue. Maecenas ut libero eu metus tincidunt lobortis. Duis accumsan at mauris vel lacinia. Cras cursus eros vel commodo tincidunt. Donec ac urna eget velit bibendum aliquam. Phasellus tempor urna erat, a fringilla elit vulputate in. Vivamus euismod mauris id sodales tincidunt.
+									</p>
+									<figure class="sc_image alignleft sc_image_shape_round width_240 height_240">
+										<img src="http://placehold.it/240x240" alt="" />
+										<figcaption>
+											<span class="icon-users-2"></span> Rounded image
+										</figcaption>
+									</figure>
+									<p>Proin dignissim commodo magna at luctus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus.
+									<br /> Proin dignissim commodo magna at luctus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus. Proin dignissim commodo magna at luctus. Nam molestie justo augue, nec eleifend urna laoreet non. Proin ut nulla egestas, hendrerit urna scelerisque, finibus nulla. Integer et elementum sem. Donec nec scelerisque elit, id pulvinar est. Maecenas laoreet, diam vel venenatis molestie, nunc augue tempus felis, nec efficitur dui leo a tellus. Proin dignissim commodo magna at luctus.
+									</p>
+                                </div>
+								<!-- /Image alignment section -->
+
+
+
+                            <!-- Team section -->
+                                <div class="sc_section" data-animation="animated fadeInUp normal">
+                                     <div class="sc_line sc_line_style_solid"></div>
+                                    <h3>团队成员</h3>
+									<div class="sc_team sc_team_style_1">
+										<div class="sc_columns columns_wrap">
+											<div class="column-1_3">
+												<div class="sc_team_item sc_team_item_1 odd first">
+													<div class="sc_team_item_avatar">
+														<img alt="" src="http://placehold.it/350x290">
+													</div>
+													<div class="sc_team_item_info">
+														<h6 class="sc_team_item_title"><a href="#">Lisa Kudrow</a></h6>
+														<div class="sc_team_item_position">Administrator</div>
+														<div class="sc_team_item_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+														<div class="sc_socials sc_socials_size_small">
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_facebook">
+																	<span class="sc_socials_hover social_facebook"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_pinterest">
+																	<span class="sc_socials_hover social_pinterest"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_twitter">
+																	<span class="sc_socials_hover social_twitter"></span>
+																</a>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="form-row place-order">
-													<input type="submit" class="button alt" name="woocommerce_checkout_place_order" value=" 保存"/>
-                                            </div>
+											<div class="column-1_3">
+												<div class="sc_team_item sc_team_item_2 even">
+													<div class="sc_team_item_avatar">
+														<img alt="" src="http://placehold.it/350x290">
+													</div>
+													<div class="sc_team_item_info">
+														<h6 class="sc_team_item_title">
+															<a href="#">Douglas Adams</a>
+														</h6>
+														<div class="sc_team_item_position">Translator</div>
+														<div class="sc_team_item_description">Aliquam erat volutpat. Nulla pulvinar scelerisque dui, ac elementum dolor sagittis eget.</div>
+														<div class="sc_socials sc_socials_size_small">
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_facebook">
+																	<span class="sc_socials_hover social_facebook"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_twitter">
+																	<span class="sc_socials_hover social_twitter"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_gplus">
+																	<span class="sc_socials_hover social_gplus"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_dribbble">
+																	<span class="sc_socials_hover social_dribbble"></span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+                                            <div class="column-1_3">
+												<div class="sc_team_item sc_team_item_2 odd">
+													<div class="sc_team_item_avatar">
+														<img alt="" src="http://placehold.it/350x290">
+													</div>
+													<div class="sc_team_item_info">
+														<h6 class="sc_team_item_title">
+															<a href="#">Douglas Adams</a>
+														</h6>
+														<div class="sc_team_item_position">Translator</div>
+														<div class="sc_team_item_description">Aliquam erat volutpat. Nulla pulvinar scelerisque dui, ac elementum dolor sagittis eget.</div>
+														<div class="sc_socials sc_socials_size_small">
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_facebook">
+																	<span class="sc_socials_hover social_facebook"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_twitter">
+																	<span class="sc_socials_hover social_twitter"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_gplus">
+																	<span class="sc_socials_hover social_gplus"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_dribbble">
+																	<span class="sc_socials_hover social_dribbble"></span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+                                            <div class="column-1_3">
+												<div class="sc_team_item sc_team_item_1 odd first">
+													<div class="sc_team_item_avatar">
+														<img alt="" src="http://placehold.it/350x290">
+													</div>
+													<div class="sc_team_item_info">
+														<h6 class="sc_team_item_title"><a href="#">Lisa Kudrow</a></h6>
+														<div class="sc_team_item_position">Administrator</div>
+														<div class="sc_team_item_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+														<div class="sc_socials sc_socials_size_small">
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_facebook">
+																	<span class="sc_socials_hover social_facebook"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_pinterest">
+																	<span class="sc_socials_hover social_pinterest"></span>
+																</a>
+															</div>
+															<div class="sc_socials_item">
+																<a href="#" target="_blank" class="social_icons social_twitter">
+																	<span class="sc_socials_hover social_twitter"></span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
 										</div>
-                                         <div class="sc_section" data-animation="animated fadeInUp normal">
-                                         {% if has_error %}
-                                        <div class="sc_infobox sc_infobox_style_info sc_infobox_closeable sc_infobox_iconed icon-info-2">
-                                             {% for field in form %}
-                                        {% if field.errors %}
-									     <b>{{ field.errors }}</b>
-                                             {% endif %}
-                                         {% endfor %}
-                                        </div>
-                                         {% endif %}
-                                         {% if information %}
-                                             <div class="sc_infobox sc_infobox_style_success sc_infobox_closeable sc_infobox_iconed icon-check-2"><b>{{ information }}</b></div>
-                                         {% endif %}
-                                         </div>
-                                        {% csrf_token %}
-									</form>
+									</div>
 								</div>
-                            <!-- Video player section -->
-                                <div class="sc_section">
-                                    <div class="sc_line sc_line_style_solid"></div>
-                                    <h4>已购买的课程</h4>
-
-                                     <div class="isotope_wrap " data-columns="3">
-                            <div class="isotope_item isotope_item_square isotope_item_square_3 isotope_column_3	flt_34">
-                                <article class="post_item post_item_square post_item_square_3 odd">
-                                    <div class="post_content isotope_item_content ih-item colored square effect_shift left_to_right">
-                                        <div class="post_featured img">
-                                            <a href="post-with-sidebar.html">
-												<img alt="" src="http://placehold.it/400x400">
-											</a>
-                                        </div>
-                                        <div class="post_info_wrap info">
-                                            <div class="info-back">
-                                                <h4 class="post_title">
-													<a href="post-with-sidebar.html">Medical Chemistry: The Molecular Basis</a>
-												</h4>
-                                                <div class="post_descr">
-                                                    <p>
-														<a href="post-with-sidebar.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam ante nec magna pharetra feugiat. Phasellus et lorem ac mauris sagittis...</a>
-													</p>
-                                                    <a href="post-with-sidebar.html"><span class="hover_icon icon-plus-2"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                             </div>
-                            <div class="isotope_item isotope_item_square isotope_item_square_3 isotope_column_3 flt_33 flt_32">
-                                <article class="post_item post_item_square post_item_square_3 post_format_gallery odd">
-                                    <div class="post_content isotope_item_content ih-item colored square effect_shift left_to_right">
-                                        <div class="post_featured img">
-                                            <a href="post-gallery-format.html">
-												<img alt="" src="http://placehold.it/400x400">
-											</a>
-                                        </div>
-                                        <div class="post_info_wrap info">
-                                            <div class="info-back">
-                                                <h4 class="post_title">
-													<a href="post-gallery-format.html">Principles of Written English, Part 1</a>
-												</h4>
-                                                <div class="post_descr">
-                                                    <p>
-														<a href="post-gallery-format.html">Cras et fringilla lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque lobortis lorem...</a>
-													</p>
-                                                    <a href="post-gallery-format.html"> <span class="hover_icon icon-plus-2"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="isotope_item isotope_item_square isotope_item_square_3 isotope_column_3 flt_32 flt_34">
-                                <article class="post_item post_item_square post_item_square_3 even last">
-                                    <div class="post_content isotope_item_content ih-item colored square effect_shift left_to_right">
-                                        <div class="post_featured img">
-                                            <a href="post-with-sidebar.html">
-												<img alt="" src="http://placehold.it/400x400">
-											</a>
-                                        </div>
-                                        <div class="post_info_wrap info">
-                                            <div class="info-back">
-                                                <h4 class="post_title">
-													<a href="post-with-sidebar.html">Medical Chemistry: The  Molecular Basis</a>
-												</h4>
-                                                <div class="post_descr">
-                                                    <p>
-														<a href="post-with-sidebar.html">Nulla dignissim nisi in nulla aliquet, eget sagittis est suscipit. Morbi quis diam nec libero imperdiet condimentum. Ut venenatis tellus in...</a>
-													</p>
-                                                    <a href="post-without-sidebar.html"><span class="hover_icon icon-plus-2"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                             </div>
-                        </div>
-                                </div>
-								<!-- /Video player section -->
-
+								<!-- Team section -->
                             </section>
                         </article>
                     </div>

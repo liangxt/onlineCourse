@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^password_forget', views.password_forget, name='password_forget'),
     url(r'^account_activate/(?P<username>.+)/(?P<token>.+)$', views.account_activate, name='account_activate'),
     url(r'^logout$', views.user_logout, name='logout'),
+<<<<<<< HEAD
     url(r'^chechout$', views.checkout, name='checkout'),
     url(r'^all_courses$', views.all_course, name='all_courses'),
     url(r'^team$', views.team, name='team'),
@@ -18,4 +19,7 @@ urlpatterns = [
     url(r'^course_module$', views.course_module, name='course_module'),
     url(r'^single_module$', views.single_module, name='single_module'),
     url(r'^profile_edit$', views.profile_edit, name='profile_edit'),
+=======
+    url(r'^checkout$', views.checkout, name='checkout'),
+>>>>>>> 16cd0e2cff65ad1ceb054051a1819409acb04745
 ]

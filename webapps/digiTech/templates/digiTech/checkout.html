@@ -4,39 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    {% load static %}
     <title>结账 | Youthdigital</title>
-
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="{% static 'digiTech/images/favicon.ico' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,700,700italic&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext" type="text/css" media="all" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister:400&#038;subset=latin" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/fontello/css/fontello.css" type="text/css" media="all" />
-	
-    <link rel="stylesheet" href="js/rs-plugin/settings.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'digiTech/css/fontello/css/fontello.css' %}" type="text/css" media="all" />
 
-	<link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/woocommerce/woocommerce-layout.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/woocommerce/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)" />
-    <link rel="stylesheet" href="css/woocommerce/woocommerce.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/woo-style.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/woocommerce/select2.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/rs-plugin/settings.css' %}" type="text/css" media="all" />
 
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/shortcodes.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/core.animation.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/tribe-style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/skins/skin.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'digiTech/js/prettyPhoto/css/prettyPhoto.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce-layout.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce-smallscreen.css' %}" type="text/css" media="only screen and (max-width: 768px)" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/woocommerce.css' %}" type="text/css" media="all" />
 
-	<link rel="stylesheet" href="css/core.portfolio.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="js/mediaelement/mediaelementplayer.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="js/mediaelement/wp-mediaelement.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" />	
-    <link rel="stylesheet" href="js/core.customizer/front.customizer.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="js/core.messages/core.messages.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="js/swiper/idangerous.swiper.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/custom-style.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/skins/skin-responsive.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/woo-style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/woocommerce/select2.css' %}" type="text/css" media="all" />
+
+
+
+    <link rel="stylesheet" href="{% static 'digiTech/css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/shortcodes.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/core.animation.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/tribe-style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/skins/skin.css' %}" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="{% static 'digiTech/css/core.portfolio.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/mediaelement/mediaelementplayer.min.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/mediaelement/wp-mediaelement.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/prettyPhoto/css/prettyPhoto.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/core.customizer/front.customizer.css' %}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'digiTech/js/core.messages/core.messages.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/js/swiper/idangerous.swiper.min.css' %}" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="{% static 'digiTech/css/responsive.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'digiTech/css/skins/skin-responsive.css' %}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'digiTech/css/custom-style.css' %}" type="text/css" media="all" />
 
 </head>
 
@@ -558,7 +562,7 @@
 															<strong class="product-quantity">&times; 1</strong> 
 														</td>
 														<td class="product-total">
-															<span class="amount">&pound;350.00</span> 
+															<span class="amount">&yen;350.00</span> 
 														</td>
 													</tr>
 													<tr class="cart_item">
@@ -567,7 +571,7 @@
 															<strong class="product-quantity">&times; 1</strong> 
 														</td>
 														<td class="product-total">
-															<span class="amount">&pound;120.00</span> 
+															<span class="amount">&yen;120.00</span> 
 														</td>
 													</tr>
 													<tr class="cart_item">
@@ -576,37 +580,43 @@
 															<strong class="product-quantity">&times; 1</strong> 
 														</td>
 														<td class="product-total">
-															<span class="amount">&pound;41.39</span> </td>
+															<span class="amount">&yen;41.39</span> </td>
 													</tr>
 												</tbody>
 												<tfoot>
 													<tr class="cart-subtotal">
 														<th>小计</th>
-														<td><span class="amount">&pound;511.39</span></td>
+														<td><span class="amount">&yen;511.39</span></td>
 													</tr>
 													<tr class="order-total">
 														<th>合计</th>
-														<td><strong><span class="amount">&pound;511.39</span></strong> </td>
+														<td><strong><span class="amount">&yen;511.39</span></strong> </td>
 													</tr>
 												</tfoot>
 											</table>
+
 											<div id="payment" class="woocommerce-checkout-payment">
 												<ul class="payment_methods methods">
-													<li class="payment_method_cheque">
+													<li class="payment_method_paypal">
 														<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque" checked="checked" />
-														<label for="payment_method_cheque">Cheque Payment </label>
-														<div class="payment_box payment_method_cheque">
-															<p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-														</div>
+														<label for="payment_method_paypal">
+															银联支付 <img src="http://placehold.it/319x110" alt="PayPal Acceptance Mark" />
+																<a href="#" class="about_paypal" title="What is PayPal?">什么是银联?</a> 
+														</label>
 													</li>
 													<li class="payment_method_paypal">
 														<input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal" data-order_button_text="Proceed to PayPal" />
 														<label for="payment_method_paypal">
-															PayPal <img src="http://placehold.it/319x110" alt="PayPal Acceptance Mark" />
-																<a href="#" class="about_paypal" title="What is PayPal?">What is PayPal?</a> 
+															支 付 宝  <img src="http://placehold.it/319x110" alt="PayPal Acceptance Mark" />
+																<a href="#" class="about_paypal" title="What is PayPal?">什么是支付宝?</a> 
 														</label>
 													</li>
 												</ul>
+												<div class="ch">
+                									<span class="up" onclick="pc_pay('alipay_pc_direct')">支付宝支付</span>
+                									<span class="up" onclick="pc_pay('upacp_pc')">银联支付</span>
+            									</div>
+
 												<div class="form-row place-order">
 													<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="提交订单" data-value="Place order" />
 												</div>
@@ -687,35 +697,69 @@
 
     <div class="custom_html_section"></div>
 		
-	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="js/jquery/ui/core.min.js"></script>
-    <script type="text/javascript" src="js/jquery/ui/widget.min.js"></script>
-    <script type="text/javascript" src="js/jquery/ui/tabs.min.js"></script>
-    <script type="text/javascript" src="js/jquery/ui/effect.min.js"></script>
-    <script type="text/javascript" src="js/jquery/ui/effect-fade.min.js"></script>	
-	<script type="text/javascript" src="js/jquery/jquery.blockUI.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.cookie.min.js"></script>	
+	<script type="text/javascript" src="{% static 'digiTech/js/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/jquery-migrate.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'digiTech/js/jquery/ui/core.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/ui/widget.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/ui/tabs.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/ui/effect.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/ui/effect-fade.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'digiTech/js/jquery/jquery.blockUI.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery/jquery.cookie.min.js' %}"></script>	
 	
-	<script type="text/javascript" src="js/global.min.js"></script>
-    <script type="text/javascript" src="js/core.utils.min.js"></script>
-    <script type="text/javascript" src="js/core.init.min.js"></script>	
-    <script type="text/javascript" src="js/shortcodes/shortcodes.min.js"></script>	
+	<script type="text/javascript" src="{% static 'digiTech/js/global.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/core.utils.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/core.init.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/shortcodes/shortcodes.min.js' %}"></script>	
 
-    <script type="text/javascript" src="js/superfish.min.js"></script>
-    <script type="text/javascript" src="js/jquery.slidemenu.min.js"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/superfish.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/jquery.slidemenu.min.js' %}"></script>
 
-    <script type="text/javascript" src="js/mediaelement/mediaelement-and-player.min.js"></script>
-    <script type="text/javascript" src="js/mediaelement/wp-mediaelement.min.js"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/mediaelement/mediaelement-and-player.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/mediaelement/wp-mediaelement.min.js' %}"></script>
 
-    <script type="text/javascript" src="js/core.messages/core.messages.min.js"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/core.messages/core.messages.min.js' %}"></script>
 
-	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="js/hover/jquery.hoverdir.min.js"></script>
-	<script type="text/javascript" src="js/hover/jquery.hoverdir.min.js"></script>
-	<script type="text/javascript" src="js/prettyPhoto/jquery.prettyPhoto.min.js"></script>		
-    <script type="text/javascript" src="js/swiper/idangerous.swiper-2.7.min.js"></script>
-    <script type="text/javascript" src="js/swiper/idangerous.swiper.scrollbar-2.4.min.js"></script>
+	<script type="text/javascript" src="{% static 'digiTech/js/jquery.isotope.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'digiTech/js/hover/jquery.hoverdir.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'digiTech/js/prettyPhoto/jquery.prettyPhoto.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/swiper/idangerous.swiper-2.7.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'digiTech/js/swiper/idangerous.swiper.scrollbar-2.4.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'digiTech/js/pingpp.js' %}"></script>
+
+    <script>
+    var YOUR_URL = 'http://http://127.0.0.1:8000';
+    function pc_pay(channel) {
+
+        if(YOUR_URL.length == 0 || !YOUR_URL.startsWith('http')){
+            alert("请填写正确的URL");
+            return;
+        }
+
+        // var amount = document.getElementById('amount').value * 100;
+        var amount = 511.39 * 100;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", YOUR_URL, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(JSON.stringify({
+            channel: channel,
+            amount: amount
+        }));
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                pingpp.createPayment(xhr.responseText, function(result, err) {
+                    console.log(result);
+                    console.log(err.msg);
+                    console.log(err.extra);
+                });
+            }
+        }
+    }
+	</script>
 	
 	<!--<script type="text/javascript" src="js/core.customizer/front.customizer.min.js"></script>
 	<script type="text/javascript" src="js/skin.customizer.min.js"></script>-->
